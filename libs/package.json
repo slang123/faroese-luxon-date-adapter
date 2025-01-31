@@ -1,0 +1,11 @@
+{
+  "name": "@slang123/faroese-date-adapter",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^19.1.0",
+    "@angular/core": "^19.1.0",
+    "@angular/material-luxon-adapter": "^19.1.2",
+    "luxon": "^3.5.0"
+  },
+  "sideEffects": false
+}
