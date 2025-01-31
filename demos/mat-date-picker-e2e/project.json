@@ -1,0 +1,9 @@
+{
+  "name": "mat-date-picker-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "demos/mat-date-picker-e2e/src",
+  "implicitDependencies": ["mat-date-picker"],
+  "// targets": "to see all targets run: nx show project mat-date-picker-e2e --web",
+  "targets": {}
+}
