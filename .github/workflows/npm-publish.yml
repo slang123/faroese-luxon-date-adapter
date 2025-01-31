@@ -1,0 +1,34 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"  # This ensures version tags trigger releases (e.g., v1.0.0)
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: "https://registry.npmjs.org/"
+          scope: "faroese-adapter-workspace"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build package
+        run: npm run build
+
+      - name: Publish to npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
